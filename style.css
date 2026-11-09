@@ -13,6 +13,11 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    cursor: pointer;
+    border: none;
+}
+
 .row {
     width: 100%;
     max-width: 1280px;
@@ -35,6 +40,11 @@ body {
 
 section {
     padding: 0 32px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 main {
@@ -111,6 +121,11 @@ a {
     text-decoration: none;
 }
 
+img {
+    width: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
 
 .login {
     margin-left: 48px;
@@ -154,6 +169,86 @@ a {
     letter-spacing: 0.6px;
 }
 
+.menu {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 378px;
+    margin: 24px 16px;
+    padding: 32px;
+    background-color: #fff;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 8px;
+    z-index: 4;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(300%);
+    transition: all 300ms ease;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.header__img--wrapper {
+    width: calc(100% - 40%);
+}
+
+.header__email {
+    width: 100%;
+    max-width: 448px;
+    height: 68px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__email--input {
+    width: 100%;
+    border-radius: 500px;
+    border: 2px solid rgb(229, 231, 235);
+    padding: 20px 192px 20px 32px;
+    color: rgb(36, 62, 99);
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: border-color 300ms;
+}
+
+.header__email--btn {
+    z-index: 2;
+    margin: 8px;
+    height: calc(100% - 16px);
+    border-radius: 500px;
+    width: 160px;
+    border: none;
+    background-color: #6415ff;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 300ms ease;
+}
+
+.header__customers {
+    margin-top: 16px;
+    padding-right: 128px;
+    opacity: 0.5;
+}
+
+.header__customers--title {
+    margin-top: 80px;
+    color: #a0aec0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6;
+}
+
 .btn {
   background-color: #6415ff;
   padding: 12px 32px;
@@ -182,6 +277,29 @@ a {
   position: fixed;
   top: 24px;
   right: 18px;
+}
+
+.menu__links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu__link {
+  color: #1a202c;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 8px 0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+a {
+  display: inline;
+  text-decoration: none;
 }
 
 .modal {
@@ -380,16 +498,42 @@ MOBILE RESPONSIVENESS ↓
     header .row {
         align-items: flex-end;
     }
+    .header__customers {
+        padding-right: 64px;
+    }
+    .header__description--para {
+        font-size: 16px;
+    }
+        .header__img--wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 @media (max-width: 1024px) {
-
     .btn__menu {
         display: block;
+    }
+        .header__description {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header__description, .header__img--wrapper {
+        width: 100%;
+        max-width: 512px;
+        margin: 0 auto;
+    }
+    .header__description--para {
+        margin: 20px 0;
     }
     header .row {
         flex-direction: column;
         align-items: center;
+    }
+    .header__customers--title, .header__img--wrapper {
+        margin-top: 48px;
     }
     footer {
         padding: 80px 32px;
@@ -418,6 +562,30 @@ MOBILE RESPONSIVENESS ↓
     .nav__logo {
         margin: 8px 0;
         padding-bottom: 4px;
+    }
+    .header__email {
+        flex-direction: column;
+        height: auto;
+    }
+    .header__email--btn {
+        width: 100%;
+        padding: 16px 0;
+        margin: 16px 0;
+        margin-bottom: 0px;
+        line-height: 1.5;
+    }
+    .header__email--input {
+        position: static;
+        padding: 16px 0;
+        padding-left: 32px;
+        line-height: 1.5;
+    }
+        .header__customers--title {
+        font-size: 14px;
+        letter-spacing: 0.05em;
+    }
+    .header__customers--title, .header__img--wrapper {
+        margin-top: 48px;
     }
     main {
         margin-bottom: 80px;
